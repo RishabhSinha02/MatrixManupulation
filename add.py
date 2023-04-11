@@ -162,7 +162,7 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    344.0,
+    375.0,
     315.0,
     anchor="nw",
     text="5",
