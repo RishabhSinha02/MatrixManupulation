@@ -17,7 +17,6 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame2")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-
 window = Tk()
 
 window.title("Matrix Manipulation")
