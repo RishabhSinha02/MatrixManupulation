@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sinha/Desktop/Rishabh/Projects/MPR4/build/assets/frame5")
+ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sinha/Desktop/Rishabh/Projects/MPR4/build/assets/frame6")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -20,6 +20,7 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
+window.title("Multiply")
 window.geometry("1000x700")
 window.configure(bg = "#FFFFFF")
 
@@ -61,10 +62,10 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    376.0,
+    364.0,
     123.0,
     anchor="nw",
-    text="INVERSE",
+    text="MULTIPLY",
     fill="#4C4C4C",
     font=("Inter Bold", 55 * -1)
 )
@@ -78,10 +79,10 @@ image_3 = canvas.create_image(
 )
 
 canvas.create_text(
-    130.0,
-    232.0,
+    257.0,
+    221.0,
     anchor="nw",
-    text="Inverse of Matrix A ",
+    text="Multiplication of Matrix A and Matrix B",
     fill="#838383",
     font=("Inter Bold", 25 * -1)
 )
@@ -119,16 +120,16 @@ button_2.place(
 )
 
 canvas.create_rectangle(
-    214.0,
-    317.0,
-    294.0,
-    397.0,
+    460.0,
+    310.0,
+    540.0,
+    390.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    234.0,
-    322.0,
+    479.0,
+    315.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -136,16 +137,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    318.0,
-    317.0,
-    398.0,
-    397.0,
+    564.0,
+    310.0,
+    644.0,
+    390.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    338.0,
-    322.0,
+    583.0,
+    315.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -153,16 +154,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    110.0,
-    317.0,
-    190.0,
-    397.0,
+    356.0,
+    310.0,
+    436.0,
+    390.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    130.0,
-    322.0,
+    375.0,
+    315.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -170,16 +171,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    214.0,
-    414.0,
-    294.0,
-    494.0,
+    460.0,
+    407.0,
+    540.0,
+    487.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    234.0,
-    419.0,
+    479.0,
+    412.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -187,16 +188,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    214.0,
-    510.0,
-    294.0,
-    590.0,
+    460.0,
+    503.0,
+    540.0,
+    583.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    234.0,
-    515.0,
+    479.0,
+    508.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -204,16 +205,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    318.0,
-    414.0,
-    398.0,
-    494.0,
+    564.0,
+    407.0,
+    644.0,
+    487.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    338.0,
-    419.0,
+    583.0,
+    412.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -221,16 +222,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    318.0,
-    510.0,
-    398.0,
-    590.0,
+    564.0,
+    503.0,
+    644.0,
+    583.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    338.0,
-    515.0,
+    583.0,
+    508.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -238,16 +239,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    110.0,
-    414.0,
-    190.0,
-    494.0,
+    356.0,
+    407.0,
+    436.0,
+    487.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    130.0,
-    419.0,
+    375.0,
+    412.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -255,178 +256,16 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    110.0,
-    511.0,
-    190.0,
-    591.0,
+    356.0,
+    504.0,
+    436.0,
+    584.0,
     fill="#6C63FF",
     outline="")
 
 canvas.create_text(
-    130.0,
-    516.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_text(
-    614.0,
-    232.0,
-    anchor="nw",
-    text="Inverse of Matrix B",
-    fill="#838383",
-    font=("Inter Bold", 25 * -1)
-)
-
-canvas.create_rectangle(
-    700.0,
-    317.0,
-    780.0,
-    397.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    720.0,
-    322.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    804.0,
-    317.0,
-    884.0,
-    397.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    824.0,
-    322.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    596.0,
-    317.0,
-    676.0,
-    397.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    616.0,
-    322.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    700.0,
-    414.0,
-    780.0,
-    494.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    720.0,
-    419.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    700.0,
-    510.0,
-    780.0,
-    590.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    720.0,
-    515.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    804.0,
-    414.0,
-    884.0,
-    494.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    824.0,
-    419.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    804.0,
-    510.0,
-    884.0,
-    590.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    824.0,
-    515.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    596.0,
-    414.0,
-    676.0,
-    494.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    616.0,
-    419.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    596.0,
-    511.0,
-    676.0,
-    591.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    616.0,
-    516.0,
+    375.0,
+    509.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",

@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sinha/Desktop/Rishabh/Projects/MPR4/build/assets/frame6")
+ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sinha/Desktop/Rishabh/Projects/MPR4/build/assets/frame3")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -20,6 +20,7 @@ def relative_to_assets(path: str) -> Path:
 
 window = Tk()
 
+window.title("Add")
 window.geometry("1000x700")
 window.configure(bg = "#FFFFFF")
 
@@ -61,10 +62,10 @@ canvas.create_text(
 )
 
 canvas.create_text(
-    364.0,
+    434.0,
     123.0,
     anchor="nw",
-    text="MULTIPLY",
+    text="ADD",
     fill="#4C4C4C",
     font=("Inter Bold", 55 * -1)
 )
@@ -78,10 +79,10 @@ image_3 = canvas.create_image(
 )
 
 canvas.create_text(
-    257.0,
-    221.0,
+    295.0,
+    216.0,
     anchor="nw",
-    text="Multiplication of Matrix A and Matrix B",
+    text="Addition of Matrix A and Matrix B",
     fill="#838383",
     font=("Inter Bold", 25 * -1)
 )
@@ -127,8 +128,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    479.0,
-    315.0,
+    476.0,
+    313.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -144,8 +145,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    583.0,
-    315.0,
+    580.0,
+    313.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -161,7 +162,7 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    375.0,
+    344.0,
     315.0,
     anchor="nw",
     text="5",
@@ -178,8 +179,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    479.0,
-    412.0,
+    476.0,
+    410.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -195,8 +196,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    479.0,
-    508.0,
+    476.0,
+    506.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -212,8 +213,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    583.0,
-    412.0,
+    580.0,
+    410.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -229,8 +230,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    583.0,
-    508.0,
+    580.0,
+    506.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -246,8 +247,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    375.0,
-    412.0,
+    372.0,
+    410.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
@@ -263,8 +264,8 @@ canvas.create_rectangle(
     outline="")
 
 canvas.create_text(
-    375.0,
-    509.0,
+    372.0,
+    507.0,
     anchor="nw",
     text="5",
     fill="#FFFFFF",
