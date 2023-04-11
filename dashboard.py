@@ -11,7 +11,7 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/sinha/Desktop/Rishabh/Projects/MPR4/build/assets/frame1")
+ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame1")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -36,29 +36,27 @@ canvas = Canvas(
 )
 
 canvas.place(x = 0, y = 0)
-image_image_1 = PhotoImage(
-    file=relative_to_assets("image_1.png"))
+image_image_1 = PhotoImage(file=relative_to_assets("image_1.png"))
 image_1 = canvas.create_image(
     97.0,
     43.0,
     image=image_image_1
 )
 
-image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
+image_image_2 = PhotoImage(file=relative_to_assets("image_2.png"))
 image_2 = canvas.create_image(
     500.0,
     407.0,
     image=image_image_2
 )
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("entry_1.png"))
+entry_image_1 = PhotoImage(file=relative_to_assets("entry_1.png"))
 entry_bg_1 = canvas.create_image(
     229.0,
     318.0,
     image=entry_image_1
 )
+
 entry_1 = Entry(
     bd=0,
     bg="#FFFFFF",
@@ -135,8 +133,7 @@ canvas.create_text(
     font=("Inter Bold", 20 * -1)
 )
 
-entry_image_2 = PhotoImage(
-    file=relative_to_assets("entry_2.png"))
+entry_image_2 = PhotoImage(file=relative_to_assets("entry_2.png"))
 entry_bg_2 = canvas.create_image(
     229.0,
     530.0,
