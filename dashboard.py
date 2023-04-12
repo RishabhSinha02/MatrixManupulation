@@ -32,16 +32,16 @@ def add():
     for i in range(len(matrix_A)):
         matrix_C.append([])
         for j in range(len(matrix_A)):
-            # print(matrix_A[i][j])
+           
             matrix_C[i].append(matrix_A[i][j] + matrix_B[i][j])
     print(matrix_C)
-    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
+    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
-					"matrix_A",
-                    "matrix_B",
-                    "matrix_C",
+					str(matrix_A),
+					str(matrix_B),
+					str(matrix_C),
                     "",
                     "Addition",
 					))
@@ -85,11 +85,22 @@ def inverse():
     matrix_A = np.reshape(matrix_A, (3, 3))
     matrix_B = np.reshape(matrix_B, (3, 3))
     print(matrix_A)
-    print(matrix_B)
     result1=np.linalg.inv(matrix_A)
     result2=np.linalg.inv(matrix_B)
-    print(result1)
-    print(result2)
+
+    print("result1:",result1)
+    print("result2:",result2)
+    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    cur = con.cursor()
+    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+					(
+					str(matrix_A),
+					str(matrix_B),
+                    "",
+                    "Inverse",
+					))
+    con.commit()
+    con.close()
 
 
 
@@ -120,11 +131,69 @@ def transpose():
             result2[j][i] = matrix_B[i][j]
     print("Transpose of matrix B")
 
+    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    cur = con.cursor()
+    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+					(
+					str(matrix_A),
+					str(matrix_B),
+					str(result1),
+                    str(result2),
+                    "Transpose",
+					))
+    con.commit()
+    con.close()
+
     os.system("python transpose.py")
 
 
 def history():
     os.system("python history.py")
+
+
+
+
+
+
+
+
+def multiply():
+    print("BUtton 3 is clicked")
+    print("In multiply")
+    A = entry_1.get().split(",")
+    B = entry_2.get().split(",")
+    matrix_A = [int(x) for x in A]
+    matrix_B = [int(x) for x in B]
+    
+    matrix_A = np.reshape(matrix_A, (3, 3))
+    matrix_B = np.reshape(matrix_B, (3, 3))
+    print(matrix_A)
+    # if len(A) == len(B) and len(A[0]) == len(B[0]):
+    # C = [[0 for j in range(len(matrix_A[0]))] for i in range(len(matrix_A))]
+    matrix_C=[]
+
+    for i in range(len(matrix_A)):
+        matrix_C.append([])
+        for j in range(len(matrix_A)):
+           
+            matrix_C[i].append(matrix_A[i][j] * matrix_B[i][j])
+    print(matrix_C)
+    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    cur = con.cursor()
+    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+					(
+					str(matrix_A),
+					str(matrix_B),
+					str(matrix_C),
+                    "",
+                    "Multiplication",
+					))
+    con.commit()
+    con.close()
+    os.system("python multiply.py")
+    # else:
+    #     return "Matrices have different shapes."
+
 
 
 window = Tk()

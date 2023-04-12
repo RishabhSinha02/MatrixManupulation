@@ -9,6 +9,34 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame5")
 
+import pymysql
+
+# Connect to the database
+conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Define the query to fetch the latest record
+query = "SELECT * FROM M_DATA_1 ORDER BY created_at DESC LIMIT 1"
+
+# Execute the query
+cursor.execute(query)
+
+# Fetch the result
+result = cursor.fetchone()
+
+# Print the result
+print(eval(result[2]))
+
+result = eval(result[2])
+
+# Close the cursor and the connection
+cursor.close()
+conn.close()
+
+
+
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
@@ -131,7 +159,7 @@ canvas.create_text(
     234.0,
     322.0,
     anchor="nw",
-    text="5",
+    text=result[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -148,7 +176,7 @@ canvas.create_text(
     338.0,
     322.0,
     anchor="nw",
-    text="5",
+    text=result[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -165,7 +193,7 @@ canvas.create_text(
     130.0,
     322.0,
     anchor="nw",
-    text="5",
+    text=result[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -182,7 +210,7 @@ canvas.create_text(
     234.0,
     419.0,
     anchor="nw",
-    text="5",
+    text=result[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -199,7 +227,7 @@ canvas.create_text(
     234.0,
     515.0,
     anchor="nw",
-    text="5",
+    text=result[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -216,7 +244,7 @@ canvas.create_text(
     338.0,
     419.0,
     anchor="nw",
-    text="5",
+    text=result[1][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -233,7 +261,7 @@ canvas.create_text(
     338.0,
     515.0,
     anchor="nw",
-    text="5",
+    text=result[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -250,7 +278,7 @@ canvas.create_text(
     130.0,
     419.0,
     anchor="nw",
-    text="5",
+    text=result[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -267,7 +295,7 @@ canvas.create_text(
     130.0,
     516.0,
     anchor="nw",
-    text="5",
+    text=result[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
