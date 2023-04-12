@@ -18,6 +18,31 @@ def history():
 def back():
     os.system("python dashboard.py")
 
+import pymysql
+
+# Connect to the database
+conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Define the query to fetch the latest record
+query = "SELECT * FROM M_DATA_1 ORDER BY created_at DESC LIMIT 1"
+
+# Execute the query
+cursor.execute(query)
+
+# Fetch the result
+result = cursor.fetchone()
+
+# Print the result
+print(eval(result[2]))
+# Close the cursor and the connection
+cursor.close()
+conn.close()
+
+result = eval(result[2])
+
 window = Tk()
 
 window.title("Add")
@@ -131,7 +156,7 @@ canvas.create_text(
     476.0,
     313.0,
     anchor="nw",
-    text="5",
+    text=result[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -148,7 +173,7 @@ canvas.create_text(
     580.0,
     313.0,
     anchor="nw",
-    text="5",
+    text=result[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -165,7 +190,7 @@ canvas.create_text(
     375.0,
     315.0,
     anchor="nw",
-    text="5",
+    text=result[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -182,7 +207,7 @@ canvas.create_text(
     476.0,
     410.0,
     anchor="nw",
-    text="5",
+    text=result[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -199,7 +224,7 @@ canvas.create_text(
     476.0,
     506.0,
     anchor="nw",
-    text="5",
+    text=result[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -216,7 +241,7 @@ canvas.create_text(
     580.0,
     410.0,
     anchor="nw",
-    text="5",
+    text=result[1][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -233,7 +258,7 @@ canvas.create_text(
     580.0,
     506.0,
     anchor="nw",
-    text="5",
+    text=result[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -250,7 +275,7 @@ canvas.create_text(
     372.0,
     410.0,
     anchor="nw",
-    text="5",
+    text=result [2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -267,7 +292,7 @@ canvas.create_text(
     372.0,
     507.0,
     anchor="nw",
-    text="5",
+    text=result[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )

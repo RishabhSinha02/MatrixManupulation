@@ -6,8 +6,44 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
+
+
+
+
+
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame4")
+
+
+
+import pymysql
+
+# Connect to the database
+conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# Define the query to fetch the latest record
+query = "SELECT * FROM M_DATA_1 ORDER BY created_at DESC LIMIT 1"
+
+# Execute the query
+cursor.execute(query)
+
+# Fetch the result
+result = cursor.fetchone()
+
+# Print the result
+print(eval(result[2]))
+
+tranpose_A = eval(result[2])
+tranpose_B = eval(result[3])
+
+# Close the cursor and the connection
+cursor.close()
+conn.close()
+
+
 
 
 def relative_to_assets(path: str) -> Path:
@@ -131,7 +167,7 @@ canvas.create_text(
     233.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -148,7 +184,7 @@ canvas.create_text(
     337.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -165,7 +201,7 @@ canvas.create_text(
     129.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -182,7 +218,7 @@ canvas.create_text(
     233.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -199,7 +235,7 @@ canvas.create_text(
     233.0,
     516.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -216,7 +252,7 @@ canvas.create_text(
     337.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[1][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -233,7 +269,7 @@ canvas.create_text(
     337.0,
     516.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -250,7 +286,7 @@ canvas.create_text(
     129.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -267,7 +303,7 @@ canvas.create_text(
     129.0,
     517.0,
     anchor="nw",
-    text="5",
+    text=tranpose_A[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -293,7 +329,7 @@ canvas.create_text(
     719.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -310,7 +346,7 @@ canvas.create_text(
     823.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -327,7 +363,7 @@ canvas.create_text(
     615.0,
     323.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -344,7 +380,7 @@ canvas.create_text(
     719.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -361,7 +397,7 @@ canvas.create_text(
     719.0,
     516.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -378,7 +414,7 @@ canvas.create_text(
     823.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[1][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -395,7 +431,7 @@ canvas.create_text(
     823.0,
     516.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -412,7 +448,7 @@ canvas.create_text(
     615.0,
     420.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -429,7 +465,7 @@ canvas.create_text(
     615.0,
     517.0,
     anchor="nw",
-    text="5",
+    text=tranpose_B[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
