@@ -8,14 +8,6 @@ import numpy as np
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
 
-def multiply():
-    os.system("python multiply.py")
-def inverse():
-    os.system("python inverse.py")
-def transpose():
-    os.system("python transpose.py")
-def history():
-    os.system("python history.py")
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame1")
@@ -58,6 +50,79 @@ def add():
     os.system("python add.py")
     # else:
     #     return "Matrices have different shapes."
+def multiply():
+    
+    A = entry_1.get().split(",")
+    B = entry_2.get().split(",")
+    matrix_A = [int(x) for x in A]
+    matrix_B = [int(x) for x in B]
+    
+    matrix_A = np.reshape(matrix_A, (3, 3))
+    matrix_B = np.reshape(matrix_B, (3, 3))
+    print(matrix_A)
+    # if len(A) == len(B) and len(A[0]) == len(B[0]):
+    # C = [[0 for j in range(len(matrix_A[0]))] for i in range(len(matrix_A))]
+    matrix_C=[]
+
+    for i in range(len(matrix_A)):
+        matrix_C.append([])
+        for j in range(len(matrix_A)):
+            # print(matrix_A[i][j])
+            matrix_C[i].append(matrix_A[i][j] * matrix_B[i][j])
+    print(matrix_C)
+
+
+    os.system("python multiply.py")
+
+
+def inverse():  
+
+    A = entry_1.get().split(",")
+    B = entry_2.get().split(",")
+    matrix_A = [int(x) for x in A]
+    matrix_B = [int(x) for x in B]
+    
+    matrix_A = np.reshape(matrix_A, (3, 3))
+    matrix_B = np.reshape(matrix_B, (3, 3))
+    print(matrix_A)
+    result1=np.linalg.inv(matrix_A)
+    result2=np.linalg.inv(matrix_B)
+
+
+
+    os.system("python inverse.py")
+
+
+def transpose():
+    A = entry_1.get().split(",")
+    B = entry_2.get().split(",")
+    matrix_A = [int(x) for x in A]
+    matrix_B = [int(x) for x in B]
+    
+    matrix_A = np.reshape(matrix_A, (3, 3))
+    matrix_B = np.reshape(matrix_B, (3, 3))
+    print(matrix_A)
+
+    # Tanspose of first Matix 
+    result1=[[0 for _ in range(len(matrix_A))]for i in range(len(matrix_A))]
+    for i in range(len(matrix_A)):
+        for j in range(len(matrix_A[0])):
+            result1[j][i] = matrix_A[i][j]
+    print("Transpose of matrix A")
+
+    # Tanspose of second Matix 
+    result2=[[0 for _ in range(len(matrix_B))]for i in range(len(matrix_B))]
+    for i in range(len(matrix_B)):
+        for j in range(len(matrix_B[0])):
+            result2[j][i] = matrix_B[i][j]
+    print("Transpose of matrix B")
+
+    os.system("python transpose.py")
+
+
+def history():
+    os.system("python history.py")
+
 
 window = Tk()
 
