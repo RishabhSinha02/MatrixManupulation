@@ -1,9 +1,10 @@
 import os
 from pathlib import Path
-
+from random import choice
+import tkinter as tk
 # from tkinter import *
 # Explicit imports to satisfy Flake8
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import CENTER, W, Tk, ttk, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -68,23 +69,43 @@ canvas.create_text(
     font=("Inter Bold", 55 * -1)
 )
 
-canvas.create_text(
-    274.0,
-    279.0,
-    anchor="nw",
-    text="Add",
-    fill="#4C4C4C",
-    font=("Inter Bold", 30 * -1)
-)
 
-canvas.create_text(
-    255.0,
-    463.0,
-    anchor="nw",
-    text="Multiply",
-    fill="#4C4C4C",
-    font=("Inter Bold", 30 * -1)
-)
+# data 
+first_names = ['Bob', 'Maria', 'Alex', 'James', 'Susan', 'Henry', 'Lisa', 'Anna', 'Lisa']
+last_names = ['Smith', 'Brown', 'Wilson', 'Thomson', 'Cook', 'Taylor', 'Walker', 'Clark']
+
+# treeview 
+table = ttk.Treeview(window, columns = ('first', 'last', 'email'), show = 'headings')
+table.heading('first', text = 'First name')
+table.heading('last', text = 'Surname')
+table.heading('email', text = 'Email')
+table.pack(fill = 'both', expand = True)
+
+# insert values into a table
+# table.insert(parent = '', index = 0, values = ('John', 'Doe', 'JohnDoe@email.com'))
+for i in range(100):
+	first = choice(first_names)
+	last = choice(last_names)
+	email = f'{first[0]}{last}@email.com'
+	data = (first, last, email)
+	table.insert(parent = '', index = 0, values = data)
+
+table.insert(parent = '', index = tk.END, values = ('XXXXX', 'YYYYY', 'ZZZZZ'))
+
+# events
+def item_select(_):
+	print(table.selection())
+	for i in table.selection():
+		print(table.item(i)['values'])
+	# table.item(table.selection())
+
+def delete_items(_):
+	print('delete')
+	for i in table.selection():
+		table.delete(i)
+
+table.bind('<<TreeviewSelect>>', item_select)
+table.bind('<Delete>', delete_items)
 
 image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))
@@ -110,310 +131,5 @@ button_1.place(
     height=47.0
 )
 
-canvas.create_rectangle(
-    740.0,
-    219.0,
-    779.0,
-    261.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    222.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    219.0,
-    829.0,
-    261.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    222.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    219.0,
-    729.0,
-    261.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    222.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    740.0,
-    270.0,
-    779.0,
-    311.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    273.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    740.0,
-    320.0,
-    779.0,
-    361.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    323.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    270.0,
-    829.0,
-    311.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    273.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    320.0,
-    829.0,
-    361.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    323.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    270.0,
-    729.0,
-    311.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    273.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    320.0,
-    729.0,
-    362.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    323.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    740.0,
-    407.0,
-    779.0,
-    449.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    410.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    407.0,
-    829.0,
-    449.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    410.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    407.0,
-    729.0,
-    449.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    410.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    740.0,
-    458.0,
-    779.0,
-    499.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    461.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    740.0,
-    508.0,
-    779.0,
-    549.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    750.0,
-    511.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    458.0,
-    829.0,
-    499.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    461.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    790.0,
-    508.0,
-    829.0,
-    549.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    800.0,
-    511.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    458.0,
-    729.0,
-    499.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    461.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
-
-canvas.create_rectangle(
-    691.0,
-    508.0,
-    729.0,
-    550.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    700.0,
-    511.0,
-    anchor="nw",
-    text="5",
-    fill="#FFFFFF",
-    font=("Inter Bold", 30 * -1)
-)
 window.resizable(False, False)
 window.mainloop()

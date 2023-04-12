@@ -85,8 +85,11 @@ def inverse():
     matrix_A = np.reshape(matrix_A, (3, 3))
     matrix_B = np.reshape(matrix_B, (3, 3))
     print(matrix_A)
+    print(matrix_B)
     result1=np.linalg.inv(matrix_A)
     result2=np.linalg.inv(matrix_B)
+    print(result1)
+    print(result2)
 
 
 
