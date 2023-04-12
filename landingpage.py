@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 # from tkinter import *
@@ -11,6 +12,10 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame2")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
+def start():
+    os.system("python register.py")
+def login():
+    os.system("python login.py")
 
 window = Tk()
 
@@ -69,7 +74,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=start,
     relief="flat"
 )
 button_1.place(
@@ -112,7 +117,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=login,
     relief="flat"
 )
 button_2.place(

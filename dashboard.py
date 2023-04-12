@@ -1,9 +1,21 @@
+import os
 from pathlib import Path
+import pymysql
+import numpy as np
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 
+
+def multiply():
+    os.system("python multiply.py")
+def inverse():
+    os.system("python inverse.py")
+def transpose():
+    os.system("python transpose.py")
+def history():
+    os.system("python history.py")
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame1")
@@ -12,6 +24,40 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame1")
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
+def add():
+    A = entry_1.get().split(",")
+    B = entry_2.get().split(",")
+    matrix_A = [int(x) for x in A]
+    matrix_B = [int(x) for x in B]
+    
+    matrix_A = np.reshape(matrix_A, (3, 3))
+    matrix_B = np.reshape(matrix_B, (3, 3))
+    print(matrix_A)
+    # if len(A) == len(B) and len(A[0]) == len(B[0]):
+    # C = [[0 for j in range(len(matrix_A[0]))] for i in range(len(matrix_A))]
+    matrix_C=[]
+
+    for i in range(len(matrix_A)):
+        matrix_C.append([])
+        for j in range(len(matrix_A)):
+            # print(matrix_A[i][j])
+            matrix_C[i].append(matrix_A[i][j] + matrix_B[i][j])
+    print(matrix_C)
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
+    cur = con.cursor()
+    cur.execute("insert into M_DATA(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+					(
+					"matrix_A",
+                    "matrix_B",
+                    "matrix_C",
+                    "",
+                    "Addition",
+					))
+    con.commit()
+    con.close()
+    os.system("python add.py")
+    # else:
+    #     return "Matrices have different shapes."
 
 window = Tk()
 
@@ -162,7 +208,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=inverse,
     relief="flat"
 )
 button_1.place(
@@ -178,7 +224,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=transpose,
     relief="flat"
 )
 button_2.place(
@@ -194,7 +240,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
+    command=multiply,
     relief="flat"
 )
 button_3.place(
@@ -210,7 +256,7 @@ button_4 = Button(
     image=button_image_4,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
+    command= add,
     relief="flat"
 )
 button_4.place(
@@ -234,7 +280,7 @@ button_5 = Button(
     image=button_image_5,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
+    command=history,
     relief="flat"
 )
 button_5.place(
