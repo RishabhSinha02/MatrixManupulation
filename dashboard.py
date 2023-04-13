@@ -149,7 +149,7 @@ def transpose():
             result2[j][i] = matrix_B[i][j]
     print("Transpose of matrix B")
 
-    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
     cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
@@ -196,7 +196,7 @@ def multiply():
            
             matrix_C[i].append(matrix_A[i][j] * matrix_B[i][j])
     print(matrix_C)
-    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
     cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(

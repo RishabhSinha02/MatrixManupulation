@@ -69,6 +69,10 @@ canvas.create_text(
     font=("Inter Bold", 55 * -1)
 )
 
+style = ttk.Style(window)
+style.theme_use("clam")
+style.configure("Treeview.Heading", background="#404275", foreground="white")
+
 
 # table data 
 first_names = ['Bob', 'Maria', 'Alex', 'James', 'Susan', 'Henry', 'Lisa', 'Anna', 'Lisa']
@@ -83,14 +87,15 @@ table.heading('type', text = 'Type')
 table.heading('result', text = 'Result')
 table.pack(fill = 'both', expand = True ,side="bottom", padx=80, pady=(180,4))
 
+# table = ttk.Style()
+# table.configure('table', foreground='red')
+
 for i in range(100):
 	first = choice(first_names)
 	email = f'{first[0]}@email.com'
 	types = choice(type)
 	data = (first, email, types, email)
 	table.insert(parent = '', index = 0, values = data)
-table.insert(parent = '', index = tk.END, values = ('----------------------------------------', '---------    END OF THE TABLE', '-----------------------------' ,'-----------------------------'))
-
 
 # # events
 # def item_select(_):

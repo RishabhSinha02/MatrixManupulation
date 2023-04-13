@@ -106,7 +106,7 @@ canvas.create_text(
     243.0,
     443.0,
     anchor="nw",
-    text="Ashutosh Shriwastava, Shruti Singh ",
+    text="Ashutosh Shrivastava, Shruti Singh ",
     fill="#838383",
     font=("Inter Bold", 25 * -1)
 )
