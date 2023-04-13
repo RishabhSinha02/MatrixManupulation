@@ -35,7 +35,7 @@ def add():
            
             matrix_C[i].append(matrix_A[i][j] + matrix_B[i][j])
     print(matrix_C)
-    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
     cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
@@ -51,7 +51,6 @@ def add():
     # else:
     #     return "Matrices have different shapes."
 def multiply():
-    
     A = entry_1.get().split(",")
     B = entry_2.get().split(",")
     matrix_A = [int(x) for x in A]
@@ -67,9 +66,21 @@ def multiply():
     for i in range(len(matrix_A)):
         matrix_C.append([])
         for j in range(len(matrix_A)):
-            # print(matrix_A[i][j])
+           
             matrix_C[i].append(matrix_A[i][j] * matrix_B[i][j])
     print(matrix_C)
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
+    cur = con.cursor()
+    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+					(
+					str(matrix_A),
+					str(matrix_B),
+					str(matrix_C),
+                    "",
+                    "Multiplication",
+					))
+    con.commit()
+    con.close()
 
 
     os.system("python multiply.py")
@@ -88,9 +99,16 @@ def inverse():
     result1=np.linalg.inv(matrix_A)
     result2=np.linalg.inv(matrix_B)
 
+    result1 = [[float(x) for x in row] for row in result1]
+    result2 = [[float(x) for x in row] for row in result2]
+
+    result1 = [[format(x, '.2f') for x in row] for row in result1]
+    result2 = [[format(x, '.2f') for x in row] for row in result2]
+
+
     print("result1:",result1)
     print("result2:",result2)
-    con = pymysql.connect(host="localhost",user="root",password="root",database="MPR")
+    con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
     cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(

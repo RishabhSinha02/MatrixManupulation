@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import pymysql
 
 # from tkinter import *
 # Explicit imports to satisfy Flake8
@@ -11,10 +12,8 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame6")
 
 
 
-import pymysql
-
 # Connect to the database
-conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+conn = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
 
 # Create a cursor object
 cursor = conn.cursor()
@@ -82,6 +81,7 @@ image_2 = canvas.create_image(
     image=image_image_2
 )
 
+# username 
 canvas.create_text(
     824.0,
     35.0,

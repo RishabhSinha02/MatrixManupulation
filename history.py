@@ -70,42 +70,42 @@ canvas.create_text(
 )
 
 
-# data 
+# table data 
 first_names = ['Bob', 'Maria', 'Alex', 'James', 'Susan', 'Henry', 'Lisa', 'Anna', 'Lisa']
 last_names = ['Smith', 'Brown', 'Wilson', 'Thomson', 'Cook', 'Taylor', 'Walker', 'Clark']
+type = ['Addition', 'Transpose', 'Addition', 'Multiplication', 'Inverse', 'Addition', 'Inverse', 'Addition']
 
-# treeview 
-table = ttk.Treeview(window, columns = ('first', 'last', 'email'), show = 'headings')
-table.heading('first', text = 'First name')
-table.heading('last', text = 'Surname')
+# table 
+table = ttk.Treeview(window, columns = ('first', 'email', 'type', 'result'), show = 'headings')
+table.heading('first', text = 'Name')
 table.heading('email', text = 'Email')
-table.pack(fill = 'both', expand = True)
+table.heading('type', text = 'Type')
+table.heading('result', text = 'Result')
+table.pack(fill = 'both', expand = True ,side="bottom", padx=80, pady=(180,4))
 
-# insert values into a table
-# table.insert(parent = '', index = 0, values = ('John', 'Doe', 'JohnDoe@email.com'))
 for i in range(100):
 	first = choice(first_names)
-	last = choice(last_names)
-	email = f'{first[0]}{last}@email.com'
-	data = (first, last, email)
+	email = f'{first[0]}@email.com'
+	types = choice(type)
+	data = (first, email, types, email)
 	table.insert(parent = '', index = 0, values = data)
+table.insert(parent = '', index = tk.END, values = ('----------------------------------------', '---------    END OF THE TABLE', '-----------------------------' ,'-----------------------------'))
 
-table.insert(parent = '', index = tk.END, values = ('XXXXX', 'YYYYY', 'ZZZZZ'))
 
-# events
-def item_select(_):
-	print(table.selection())
-	for i in table.selection():
-		print(table.item(i)['values'])
-	# table.item(table.selection())
+# # events
+# def item_select(_):
+# 	print(table.selection())
+# 	for i in table.selection():
+# 		print(table.item(i)['values'])
+# 	# table.item(table.selection())
 
-def delete_items(_):
-	print('delete')
-	for i in table.selection():
-		table.delete(i)
+# def delete_items(_):
+# 	print('delete')
+# 	for i in table.selection():
+# 		table.delete(i)
 
-table.bind('<<TreeviewSelect>>', item_select)
-table.bind('<Delete>', delete_items)
+# table.bind('<<TreeviewSelect>>', item_select)
+# table.bind('<Delete>', delete_items)
 
 image_image_3 = PhotoImage(
     file=relative_to_assets("image_3.png"))

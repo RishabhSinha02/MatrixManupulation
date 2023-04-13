@@ -119,13 +119,14 @@ entry_2 = Entry(
     bd=0,
     bg="#EBEAFF",
     fg="#000716",
-    highlightthickness=0
+    highlightthickness=0,
+    show="*"
 )
 entry_2.place(
     x=622.0,
     y=329.0,
     width=253.0,
-    height=52.0
+    height=52.0,
 )
 
 canvas.create_text(

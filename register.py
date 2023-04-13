@@ -159,7 +159,8 @@ entry_4 = Entry(
     bd=0,
     bg="#EBEAFF",
     fg="#000716",
-    highlightthickness=0
+    highlightthickness=0,
+    show="*"
 )
 entry_4.place(
     x=618.0,
@@ -188,7 +189,8 @@ entry_5 = Entry(
     bd=0,
     bg="#EBEAFF",
     fg="#000716",
-    highlightthickness=0
+    highlightthickness=0,
+    show="*"
 )
 entry_5.place(
     x=618.0,

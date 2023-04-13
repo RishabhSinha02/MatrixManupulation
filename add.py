@@ -21,7 +21,7 @@ def back():
 import pymysql
 
 # Connect to the database
-conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+conn = pymysql.connect(host='localhost', user='root', password='12345678', db='MPR')
 
 # Create a cursor object
 cursor = conn.cursor()
@@ -145,18 +145,35 @@ button_2.place(
 )
 
 canvas.create_rectangle(
+    356.0,
+    310.0,
+    436.0,
+    390.0,
+    fill="#6C63FF",
+    outline="")
+# 1
+canvas.create_text(
+    363.0,
+    315.0,
+    anchor="nw",
+    text=result[0][0],
+    fill="#FFFFFF",
+    font=("Inter Bold", 63 * -1)
+)
+
+canvas.create_rectangle(
     460.0,
     310.0,
     540.0,
     390.0,
     fill="#6C63FF",
     outline="")
-
+# 2
 canvas.create_text(
-    476.0,
+    464.0,
     313.0,
     anchor="nw",
-    text=result[0][0],
+    text=result[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -168,29 +185,29 @@ canvas.create_rectangle(
     390.0,
     fill="#6C63FF",
     outline="")
-
+# 3
 canvas.create_text(
-    580.0,
+    568.0,
     313.0,
     anchor="nw",
-    text=result[0][1],
+    text=result[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
 
 canvas.create_rectangle(
     356.0,
-    310.0,
+    407.0,
     436.0,
-    390.0,
+    487.0,
     fill="#6C63FF",
     outline="")
-
+# 4
 canvas.create_text(
-    375.0,
-    315.0,
+    360.0,
+    410.0,
     anchor="nw",
-    text=result[0][2],
+    text=result [1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -202,27 +219,10 @@ canvas.create_rectangle(
     487.0,
     fill="#6C63FF",
     outline="")
-
+# 5
 canvas.create_text(
-    476.0,
+    464.0,
     410.0,
-    anchor="nw",
-    text=result[1][0],
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    460.0,
-    503.0,
-    540.0,
-    583.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    476.0,
-    506.0,
     anchor="nw",
     text=result[1][1],
     fill="#FFFFFF",
@@ -236,46 +236,12 @@ canvas.create_rectangle(
     487.0,
     fill="#6C63FF",
     outline="")
-
+# 6
 canvas.create_text(
-    580.0,
+    568.0,
     410.0,
     anchor="nw",
     text=result[1][2],
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    564.0,
-    503.0,
-    644.0,
-    583.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    580.0,
-    506.0,
-    anchor="nw",
-    text=result[2][0],
-    fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
-)
-
-canvas.create_rectangle(
-    356.0,
-    407.0,
-    436.0,
-    487.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    372.0,
-    410.0,
-    anchor="nw",
-    text=result [2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
@@ -287,14 +253,50 @@ canvas.create_rectangle(
     584.0,
     fill="#6C63FF",
     outline="")
-
+# 7
 canvas.create_text(
-    372.0,
+    360.0,
     507.0,
+    anchor="nw",
+    text=result[2][0],
+    fill="#FFFFFF",
+    font=("Inter Bold", 63 * -1)
+)
+
+canvas.create_rectangle(
+    460.0,
+    503.0,
+    540.0,
+    583.0,
+    fill="#6C63FF",
+    outline="")
+# 8
+canvas.create_text(
+    464.0,
+    506.0,
+    anchor="nw",
+    text=result[2][1],
+    fill="#FFFFFF",
+    font=("Inter Bold", 63 * -1)
+)
+
+canvas.create_rectangle(
+    564.0,
+    503.0,
+    644.0,
+    583.0,
+    fill="#6C63FF",
+    outline="")
+# 9
+canvas.create_text(
+    568.0,
+    506.0,
     anchor="nw",
     text=result[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 63 * -1)
 )
+
+
 window.resizable(False, False)
 window.mainloop()

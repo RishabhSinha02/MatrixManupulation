@@ -12,7 +12,7 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"./assets/frame5")
 import pymysql
 
 # Connect to the database
-conn = pymysql.connect(host='localhost', user='root', password='root', db='MPR')
+conn = pymysql.connect(host='localhost', user='root', password='12345678', db='MPR')
 
 # Create a cursor object
 cursor = conn.cursor()
