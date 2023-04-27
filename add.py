@@ -27,7 +27,7 @@ conn = pymysql.connect(host='localhost', user='root', password='12345678', db='M
 cursor = conn.cursor()
 
 # Define the query to fetch the latest record
-query = "SELECT * FROM M_DATA_1 ORDER BY created_at DESC LIMIT 1"
+query = "SELECT * FROM M_DATA_3 ORDER BY created_at DESC LIMIT 1"
 
 # Execute the query
 cursor.execute(query)
@@ -109,7 +109,7 @@ canvas.create_text(
     216.0,
     anchor="nw",
     text="Addition of Matrix A and Matrix B",
-    fill="#838383",
+    fill="#825253",
     font=("Inter Bold", 25 * -1)
 )
 
@@ -159,7 +159,7 @@ canvas.create_text(
     anchor="nw",
     text=result[0][0],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -176,7 +176,7 @@ canvas.create_text(
     anchor="nw",
     text=result[0][1],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -193,7 +193,7 @@ canvas.create_text(
     anchor="nw",
     text=result[0][2],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -210,7 +210,7 @@ canvas.create_text(
     anchor="nw",
     text=result [1][0],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -227,7 +227,7 @@ canvas.create_text(
     anchor="nw",
     text=result[1][1],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -244,7 +244,7 @@ canvas.create_text(
     anchor="nw",
     text=result[1][2],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -261,7 +261,7 @@ canvas.create_text(
     anchor="nw",
     text=result[2][0],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -278,7 +278,7 @@ canvas.create_text(
     anchor="nw",
     text=result[2][1],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -295,7 +295,7 @@ canvas.create_text(
     anchor="nw",
     text=result[2][2],
     fill="#FFFFFF",
-    font=("Inter Bold", 63 * -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 

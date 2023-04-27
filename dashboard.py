@@ -37,7 +37,7 @@ def add():
     print(matrix_C)
     con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_3(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
 					str(matrix_A),
 					str(matrix_B),
@@ -71,7 +71,7 @@ def multiply():
     print(matrix_C)
     con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_3(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
 					str(matrix_A),
 					str(matrix_B),
@@ -108,13 +108,15 @@ def inverse():
 
     print("result1:",result1)
     print("result2:",result2)
+    
     con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_3(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
 					str(matrix_A),
 					str(matrix_B),
-                    "",
+                    str(result1),
+                    str(result2),
                     "Inverse",
 					))
     con.commit()
@@ -151,7 +153,7 @@ def transpose():
 
     con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_3(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
 					str(matrix_A),
 					str(matrix_B),
@@ -198,7 +200,7 @@ def multiply():
     print(matrix_C)
     con = pymysql.connect(host="localhost",user="root",password="12345678",database="MPR")
     cur = con.cursor()
-    cur.execute("insert into M_DATA_1(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
+    cur.execute("insert into M_DATA_3(matrix1,matrix2,result1,result2,optype) values(%s,%s,%s,%s,%s)",
 					(
 					str(matrix_A),
 					str(matrix_B),
