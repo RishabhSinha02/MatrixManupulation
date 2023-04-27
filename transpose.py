@@ -167,7 +167,7 @@ canvas.create_text(
     129.0,
     323.0,
     anchor="nw",
-    text=tranpose_A[0][2],
+    text=tranpose_A[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -184,7 +184,7 @@ canvas.create_text(
     233.0,
     323.0,
     anchor="nw",
-    text=tranpose_A[0][0],
+    text=tranpose_A[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -200,7 +200,7 @@ canvas.create_text(
     337.0,
     323.0,
     anchor="nw",
-    text=tranpose_A[0][1],
+    text=tranpose_A[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -218,7 +218,7 @@ canvas.create_text(
     129.0,
     420.0,
     anchor="nw",
-    text=tranpose_A[2][1],
+    text=tranpose_A[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -235,7 +235,7 @@ canvas.create_text(
     233.0,
     420.0,
     anchor="nw",
-    text=tranpose_A[1][0],
+    text=tranpose_A[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -269,7 +269,7 @@ canvas.create_text(
     129.0,
     517.0,
     anchor="nw",
-    text=tranpose_A[2][2],
+    text=tranpose_A[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -286,7 +286,7 @@ canvas.create_text(
     233.0,
     516.0,
     anchor="nw",
-    text=tranpose_A[1][1],
+    text=tranpose_A[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -305,7 +305,7 @@ canvas.create_text(
     337.0,
     516.0,
     anchor="nw",
-    text=tranpose_A[2][0],
+    text=tranpose_A[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -334,7 +334,7 @@ canvas.create_text(
     615.0,
     323.0,
     anchor="nw",
-    text=tranpose_B[0][2],
+    text=tranpose_B[0][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -351,7 +351,7 @@ canvas.create_text(
     719.0,
     323.0,
     anchor="nw",
-    text=tranpose_B[0][0],
+    text=tranpose_B[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -368,7 +368,7 @@ canvas.create_text(
     823.0,
     323.0,
     anchor="nw",
-    text=tranpose_B[0][1],
+    text=tranpose_B[0][2],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -385,7 +385,7 @@ canvas.create_text(
     615.0,
     420.0,
     anchor="nw",
-    text=tranpose_B[2][1],
+    text=tranpose_B[1][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -403,7 +403,7 @@ canvas.create_text(
     719.0,
     420.0,
     anchor="nw",
-    text=tranpose_B[1][0],
+    text=tranpose_B[1][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -437,7 +437,7 @@ canvas.create_text(
     615.0,
     517.0,
     anchor="nw",
-    text=tranpose_B[2][2],
+    text=tranpose_B[2][0],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -454,7 +454,7 @@ canvas.create_text(
     719.0,
     516.0,
     anchor="nw",
-    text=tranpose_B[1][1],
+    text=tranpose_B[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -472,7 +472,7 @@ canvas.create_text(
     823.0,
     516.0,
     anchor="nw",
-    text=tranpose_B[2][0],
+    text=tranpose_B[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
