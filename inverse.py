@@ -151,139 +151,105 @@ button_2.place(
 )
 
 canvas.create_rectangle(
-    214.0,
+    110.0,
     317.0,
-    294.0,
+    190.0,
     397.0,
-    fill="#6C63FF",
+    fill="#6C25FF",
     outline="")
-
+# Matrix A1
 canvas.create_text(
-    234.0,
-    322.0,
+    129.0,
+    323.0,
     anchor="nw",
     text=result[0][0],
     fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
-    318.0,
+    214.0,
     317.0,
-    398.0,
+    294.0,
     397.0,
-    fill="#6C63FF",
+    fill="#6C25FF",
     outline="")
-
+# Matrix A2
 canvas.create_text(
-    325.0,
-    322.0,
+    233.0,
+    323.0,
     anchor="nw",
     text=result[0][1],
     fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
+    font=("Inter Bold", 25 * -1)
 )
-
 canvas.create_rectangle(
-    110.0,
+    318.0,
     317.0,
-    190.0,
+    398.0,
     397.0,
-    fill="#6C63FF",
+    fill="#6C25FF",
     outline="")
-
+# Matrix A3
 canvas.create_text(
-    130.0,
-    322.0,
+    337.0,
+    323.0,
     anchor="nw",
     text=result[0][2],
     fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
+    font=("Inter Bold", 25 * -1)
 )
 
-canvas.create_rectangle(
-    214.0,
-    414.0,
-    294.0,
-    494.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    234.0,
-    419.0,
-    anchor="nw",
-    text=result[1][0],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
-)
-
-canvas.create_rectangle(
-    214.0,
-    510.0,
-    294.0,
-    590.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    234.0,
-    515.0,
-    anchor="nw",
-    text=result[1][1],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
-)
-
-canvas.create_rectangle(
-    318.0,
-    414.0,
-    398.0,
-    494.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    325.0,
-    419.0,
-    anchor="nw",
-    text=result[1][2],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
-)
-
-canvas.create_rectangle(
-    318.0,
-    510.0,
-    398.0,
-    590.0,
-    fill="#6C63FF",
-    outline="")
-
-canvas.create_text(
-    325.0,
-    515.0,
-    anchor="nw",
-    text=result[2][0],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
-)
 
 canvas.create_rectangle(
     110.0,
     414.0,
     190.0,
     494.0,
-    fill="#6C63FF",
+    fill="#6C25FF",
     outline="")
-
+# Matrix A4
 canvas.create_text(
-    130.0,
-    419.0,
+    129.0,
+    420.0,
     anchor="nw",
-    text=result[2][1],
+    text=result[1][0],
     fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
+    font=("Inter Bold", 25 * -1)
+)
+
+canvas.create_rectangle(
+    214.0,
+    414.0,
+    294.0,
+    494.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix A5
+canvas.create_text(
+    233.0,
+    420.0,
+    anchor="nw",
+    text=result[1][1],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
+)
+
+canvas.create_rectangle(
+    318.0,
+    414.0,
+    398.0,
+    494.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix A6
+canvas.create_text(
+    337.0,
+    420.0,
+    anchor="nw",
+    text=result[1][2],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
 )
 
 canvas.create_rectangle(
@@ -291,24 +257,80 @@ canvas.create_rectangle(
     511.0,
     190.0,
     591.0,
-    fill="#6C63FF",
+    fill="#6C25FF",
     outline="")
-
+# Matrix A7
 canvas.create_text(
-    130.0,
+    129.0,
+    517.0,
+    anchor="nw",
+    text=result[2][0],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
+)
+
+canvas.create_rectangle(
+    214.0,
+    510.0,
+    294.0,
+    590.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix A8
+canvas.create_text(
+    233.0,
+    516.0,
+    anchor="nw",
+    text=result[2][1],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
+)
+
+
+
+canvas.create_rectangle(
+    318.0,
+    510.0,
+    398.0,
+    590.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix A9
+canvas.create_text(
+    337.0,
     516.0,
     anchor="nw",
     text=result[2][2],
     fill="#FFFFFF",
-    font=("Inter Bold", 25* -1)
+    font=("Inter Bold", 25 * -1)
 )
 
+
+
+
 canvas.create_text(
-    614.0,
+    596.0,
     232.0,
     anchor="nw",
-    text="Inverse of Matrix B",
-    fill="#825253",
+    text="Transpose of Matrix B",
+    fill="#838383",
+    font=("Inter Bold", 25 * -1)
+)
+
+canvas.create_rectangle(
+    596.0,
+    317.0,
+    676.0,
+    397.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix B1
+canvas.create_text(
+    615.0,
+    323.0,
+    anchor="nw",
+    text=result[0][0],
+    fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
 
@@ -319,12 +341,12 @@ canvas.create_rectangle(
     397.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B2 
 canvas.create_text(
     719.0,
     323.0,
     anchor="nw",
-    text=result[0][0],
+    text=result[0][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -336,26 +358,9 @@ canvas.create_rectangle(
     397.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B3
 canvas.create_text(
     823.0,
-    323.0,
-    anchor="nw",
-    text=result[0][1],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25 * -1)
-)
-
-canvas.create_rectangle(
-    596.0,
-    317.0,
-    676.0,
-    397.0,
-    fill="#6C25FF",
-    outline="")
-
-canvas.create_text(
-    615.0,
     323.0,
     anchor="nw",
     text=result[0][2],
@@ -364,15 +369,15 @@ canvas.create_text(
 )
 
 canvas.create_rectangle(
-    700.0,
+    596.0,
     414.0,
-    780.0,
+    676.0,
     494.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B4
 canvas.create_text(
-    719.0,
+    615.0,
     420.0,
     anchor="nw",
     text=result[1][0],
@@ -380,17 +385,18 @@ canvas.create_text(
     font=("Inter Bold", 25 * -1)
 )
 
+
 canvas.create_rectangle(
     700.0,
-    510.0,
+    414.0,
     780.0,
-    590.0,
+    494.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B5
 canvas.create_text(
     719.0,
-    516.0,
+    420.0,
     anchor="nw",
     text=result[1][1],
     fill="#FFFFFF",
@@ -404,46 +410,12 @@ canvas.create_rectangle(
     494.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B6
 canvas.create_text(
     823.0,
     420.0,
     anchor="nw",
     text=result[1][2],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25 * -1)
-)
-
-canvas.create_rectangle(
-    804.0,
-    510.0,
-    884.0,
-    590.0,
-    fill="#6C25FF",
-    outline="")
-
-canvas.create_text(
-    823.0,
-    516.0,
-    anchor="nw",
-    text=result[2][0],
-    fill="#FFFFFF",
-    font=("Inter Bold", 25 * -1)
-)
-
-canvas.create_rectangle(
-    596.0,
-    414.0,
-    676.0,
-    494.0,
-    fill="#6C25FF",
-    outline="")
-
-canvas.create_text(
-    615.0,
-    420.0,
-    anchor="nw",
-    text=result[2][1],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
@@ -455,14 +427,51 @@ canvas.create_rectangle(
     591.0,
     fill="#6C25FF",
     outline="")
-
+# Matrix B7
 canvas.create_text(
     615.0,
     517.0,
     anchor="nw",
+    text=result[2][0],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
+)
+
+canvas.create_rectangle(
+    700.0,
+    510.0,
+    780.0,
+    590.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix B8
+canvas.create_text(
+    719.0,
+    516.0,
+    anchor="nw",
+    text=result[2][1],
+    fill="#FFFFFF",
+    font=("Inter Bold", 25 * -1)
+)
+
+
+canvas.create_rectangle(
+    804.0,
+    510.0,
+    884.0,
+    590.0,
+    fill="#6C25FF",
+    outline="")
+# Matrix B9
+canvas.create_text(
+    823.0,
+    516.0,
+    anchor="nw",
     text=result[2][2],
     fill="#FFFFFF",
     font=("Inter Bold", 25 * -1)
 )
+
+
 window.resizable(False, False)
 window.mainloop()
